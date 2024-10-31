@@ -3,14 +3,16 @@
 header{
     width: 100%;
     height: 70px;
-    position: relative;
-}
-header.active{
     position: fixed;
     top: 0;
     left: 0;
     background-color: #fff;
+    z-index: 1;
+}
+header.active{
+
     border-bottom: 1px solid #E6E5E6;
+
 }
 header > .wrap{
     height: 100%;
