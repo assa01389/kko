@@ -31,6 +31,9 @@ header .nav ul li a{
     font-size: 1.6rem;
     font-weight: bold;
 }
+header .nav ul li a:hover{
+    color: #001eff;
+}
 header .nav ul li a > img{
     width: 24px;
 }

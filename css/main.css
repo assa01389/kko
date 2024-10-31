@@ -2,8 +2,8 @@
 
 main{
     width: 100%;
-    height: 2450px;
     margin-top: 30px;
+    margin-bottom: 120px;
 }
 main .slide{
     width: 100%;
@@ -11,8 +11,13 @@ main .slide{
 main .slide .main_visu{
     width: 77rem;
     height: 100%;
+    overflow: hidden;
     margin-right: 30px;
 }
+main .slide .main_visu ul{
+    width: 400%;
+}
+main .slide .main_visu ul li{}
 main .slide .sub_visu{
     width: 37rem;
     height: 100%;
@@ -35,7 +40,6 @@ main section .main_cont .left{
 main section .main_cont .right{
     width: 30rem;
     height: 100%;
-    background-color: aquamarine;
 }
 
 main section .main_cont .list_box{
@@ -50,6 +54,11 @@ main section .main_cont .list_box ul li{
     margin-bottom: 45px;
     padding: 0 10px;
     box-sizing: border-box;
+
+}
+main section .main_cont .list_box ul li a:hover > p{
+    transform: translateY(-10px);
+    filter: drop-shadow(0px 20px 40px #BDC4D3);
 }
 main section .main_cont .list_box ul li a > p{
     width: 100%;
@@ -57,6 +66,7 @@ main section .main_cont .list_box ul li a > p{
     margin-bottom: 20px;
     border-radius: 20px;
     overflow: hidden;
+    transition: 0.3s;
 }
 main section .main_cont .new ul li:first-child a > p{
     border-radius: 20px 100px 100px 20px !important;
@@ -97,14 +107,63 @@ main section .main_cont .banner img{
     height: 100%;
     object-fit: contain;
 }
+main section .main_cont .card_list{}
+main section .main_cont .card_list ul{}
 main section .main_cont .card_list ul li{
+    position: relative;
     width: 100%;
     height: 33rem;
     background-color: black;
     margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+main section .main_cont .card_list ul li:hover{
+    transform: translateY(-10px);
+    filter: drop-shadow(0px 20px 16px #BDC4D3);
+}
+main section .main_cont .card_list ul li a > img{
+
+}
+main section .main_cont .card_list ul li .txt{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0,0,0.2);
+    padding: 20px 0 0 20px;
+    box-sizing: border-box;
+}
+main section .main_cont .card_list ul li .txt b{
+    color: #fff;
+    font-size: 1.8rem;
+    margin-right: 5px;
+}
+main section .main_cont .card_list ul li .txt span{
+    color: #fff;
+    padding: 5px 10px;
+    background-color: #1e1e1e;
+    border-radius: 30px;
+    font-weight: bold;
 }
 main .btn{
-    display: inline-block;
     width: 100%;
     text-align: center;
+}
+main .btn a{
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+main .btn:hover{
+    
+}
+main .btn:hover a{
+    background-color: #1e1e1e;
+    color: #fff;
 }
