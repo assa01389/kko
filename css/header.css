@@ -3,24 +3,21 @@
 header{
     width: 100%;
     height: 70px;
-    padding: 0 15px;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #fff;
     z-index: 1;
 }
 header.active{
-
     border-bottom: 1px solid #E6E5E6;
-
 }
 header > .wrap{
+    background-color: #fff;
     height: 100%;
-    justify-content: space-between;
     align-items: center;
 }
 header .logo{
+    margin-right: auto;
     align-items: center;
 }
 header .logo img:first-child{
@@ -35,7 +32,7 @@ header .nav ul{
     align-items: center;
 }
 header .nav ul li{
-    margin-left: 30px;
+    margin-right: 30px;
 }
 header .nav ul li a{
     font-size: 1.6rem;
@@ -46,4 +43,54 @@ header .nav ul li a:hover{
 }
 header .nav ul li a > img{
     width: 24px;
+}
+header .search img,
+header .hbr img{
+    width: 24px;
+}
+@media screen and (min-width: 1023px){
+    header .hbr{display: none;}
+}
+@media screen and (min-width: 320px) and (max-width: 1023px){
+header .menu_bg{
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0,0,0, 50%);
+        z-index: -1;
+        display: none;
+    }
+    header .wrap{
+        display: flex;
+    }
+    header .nav{
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        transition: 0.3s;
+        z-index: 1;
+    }
+    header .nav ul{
+        width: 100%;
+        display: inline-block;
+        background-color: #fff;
+        padding: 30px;
+    }
+    header .nav ul li{
+        margin-bottom: 15px;
+    }
+    header .hbr{
+        display: inline-block;
+        margin-left: 15px;
+    }
+    header .nav.active{
+        max-height: 400px;
+    }
+    
 }

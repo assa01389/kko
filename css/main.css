@@ -9,10 +9,8 @@ main .slide{
     width: 100%;
 }
 main .slide .main_visu{
-    width: 77rem;
     height: 100%;
     overflow: hidden;
-    margin-right: 30px;
 }
 main .slide .main_visu ul{
     width: 400%;
@@ -21,7 +19,9 @@ main .slide .main_visu ul li{
     position: relative;
 }
 main .slide .main_visu ul li a{}
-main .slide .main_visu ul li a img{}
+main .slide .main_visu ul li a img{
+    object-fit: cover;
+}
 main .slide .main_visu ul li a strong{
     position: absolute;
     right: 40px;
@@ -44,15 +44,7 @@ main section .main_cont h2{
     font-size: 2.4rem;
     margin-bottom: 30px;
 }
-main section .main_cont .left{
-    width: 84rem;
-    height: 100%;
-    margin-right: 30px;
-}
-main section .main_cont .right{
-    width: 30rem;
-    height: 100%;
-}
+
 
 main section .main_cont .list_box{
     width: 100%;
@@ -66,7 +58,6 @@ main section .main_cont .list_box ul li{
     margin-bottom: 45px;
     padding: 0 10px;
     box-sizing: border-box;
-
 }
 main section .main_cont .list_box ul li a:hover > p{
     transform: translateY(-10px);
@@ -111,13 +102,7 @@ main section .main_cont .list_box ul li a .desc span{
 
 main section .main_cont .banner{
     width: 100%;
-    height: 16rem;
     background-color: #001eff;
-    margin: 100px 0 60px;
-}
-main section .main_cont .banner img{
-    height: 100%;
-    object-fit: contain;
 }
 main section .main_cont .card_list{}
 main section .main_cont .card_list ul{}
@@ -125,7 +110,6 @@ main section .main_cont .card_list ul li{
     position: relative;
     width: 100%;
     background-color: black;
-    margin-bottom: 30px;
     overflow: hidden;
     border-radius: 20px;
     transition: 0.3s;
@@ -178,4 +162,90 @@ main .btn:hover{
 main .btn:hover a{
     background-color: #1e1e1e;
     color: #fff;
+}
+
+@media screen and (min-width: 1023px){
+    main .slide .main_visu{
+        width: 77rem;
+    }
+    main .slide .main_visu{
+        margin-right: 30px;
+    }
+    main .slide .main_visu ul li:last-child{
+        display: none;
+    }
+    main section .main_cont .left{
+        width: 84rem;
+        height: 100%;
+        margin-right: 30px;
+    }
+    main section .main_cont .right{
+        width: 30rem;
+        height: 100%;
+    }
+    main .mobile_banner{
+        display: none;
+    }
+    main section .main_cont .banner{
+        height: 16rem;
+        margin: 100px 0 60px;
+    }
+    main section .main_cont .banner img{
+        height: 100%;
+        object-fit: contain;
+    }
+    main section .main_cont .card_list ul li{
+        margin-bottom: 30px;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 1023px){
+    main .slide .main_visu{
+        
+    }
+    main .slide .main_visu ul{
+        width: 500%;
+        display: flex;
+    }
+    main .slide .main_visu ul li{
+        width: 100%;
+    }
+    main .slide .main_visu ul li a{}
+    main .slide .main_visu ul li a img{
+        aspect-ratio: 13 / 17
+    }
+
+    main .slide .sub_visu{
+        display: none;
+    }
+    main section .main_cont .list_box ul li{
+        width: 100%;
+    }
+    main section .main_cont .list_box{
+        height: auto;
+    }
+    main section .main_cont .new ul li:first-child a > p{
+        border-radius: 20px 200px 200px 20px !important;
+    }
+    main section .main_cont .banner{
+        border-radius: 0;
+        margin: 60px 0;
+    }
+    main .pc_banner{
+        display: none;
+    }
+    main .main_cont .card_list{
+        margin-top: 65px;
+    }
+    main .main_cont .card_list ul{
+        display: flex;
+        overflow: hidden;
+        margin-bottom: 40px;
+    }
+    main section .main_cont .card_list ul li{
+        min-width: 240px;
+        margin-right: 20px;
+    }
+    main section .main_cont .card_list ul li a > img{
+        aspect-ratio: 120 / 133;
+    }
 }
