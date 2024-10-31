@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+header{
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #E6E5E6;
+}
+header > .wrap{
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    align-items: center;
+}
+header .logo img:first-child{
+    width: 88px;
+    margin-right: 10px;
+}
+header .logo img:last-child{
+    width: 70px;
+}
+
+header .nav ul{
+    align-items: center;
+}
+header .nav ul li{
+    margin-left: 30px;
+}
+header .nav ul li a{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+header .nav ul li a > img{
+    width: 24px;
+}
