@@ -1,16 +1,23 @@
 @charset "utf-8";
 
 header{
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 70px;
+    z-index: 1;
+}
+header.active{
     border-bottom: 1px solid #E6E5E6;
 }
 header > .wrap{
     height: 100%;
-    justify-content: space-between;
+    background-color: #fff;
     align-items: center;
 }
 header .logo{
+    margin-right: auto;
     align-items: center;
 }
 header .logo img:first-child{
@@ -25,15 +32,19 @@ header .nav ul{
     align-items: center;
 }
 header .nav ul li{
-    margin-left: 30px;
+    margin-right: 30px;
 }
 header .nav ul li a{
-    font-size: 1.6rem;
     font-weight: bold;
+    font-size: 1.6rem;
 }
 header .nav ul li a:hover{
     color: #001eff;
 }
 header .nav ul li a > img{
+    width: 24px;
+}
+header .search img,
+header .hbr img{
     width: 24px;
 }

@@ -2,13 +2,11 @@
 
 footer{
     width: 100%;
-    height: 400px;
     background-color: #1e1e1e;
 }
 footer .top{
-    width: 100%;
-    height: 300px;
-    padding: 40px 0;
+    padding-top: 40px;
+    padding-bottom: 70px;
     justify-content: space-between;
 }
 footer .top .apply{}
@@ -17,21 +15,23 @@ footer .top .apply h3 img{
     width: 12rem;
 }
 footer .top .apply p{
+    padding: 30px 0 40px;
     color: #999;
-    font-size: 1.4rem;
-    padding: 30px 0 40px; 
+    font-size: 1.4rem; 
+    word-break: keep-all;
 }
-footer .top .apply button{
-    background-color: #fec62c;
-    border-radius: 30px;
-    color: #1e1e1e;
-}
-footer .top .apply button a{
+footer .top .apply a{
     display: inline-block;
+    padding: 10px 20px;
     font-weight: bold;
     font-size: 1.4rem;
-    padding: 10px 20px;
-
+    color: #1e1e1e;
+    background-color: #fec62c;
+    border-radius: 30px;
+}
+footer .top .apply a button{
+    background: none;
+    border: 0;
 }
 footer .top .info{
     gap: 90px;
@@ -44,8 +44,8 @@ footer .top .info dl dt{
 }
 footer .top .info dl dt a{
     color: #fff;
-    font-size: 1.6rem;
     font-weight: bold;
+    font-size: 1.6rem;
     
 }
 footer .top .info dl dd{
@@ -56,10 +56,14 @@ footer .top .info dl dd a{
     font-size: 1.4rem;
     
 }
+footer .top .info dl dd i{
+    font-weight: bold;
+    font-size: 14px;
+    transform: rotate(45deg) translateY(-3px);
+}
 
 footer .bottom{
     width: 100%;
-    height: 100px;
     background-color: #191919;
 }
 footer .bottom > .wrap{
@@ -70,6 +74,19 @@ footer .bottom > .wrap{
 }
 footer .bottom .copyright{}
 footer .bottom .copyright p{
-    font-size: 1.4rem;
     color: #666;
+    font-size: 1.4rem;
+}
+
+footer .bottom .sns_link{}
+footer .bottom .sns_link ul{}
+footer .bottom .sns_link ul li{}
+footer .bottom .sns_link ul li a{}
+footer .bottom .sns_link ul li a i{
+    color: #807f80;
+    font-size: 2.5rem;
+    margin-left: 20px;
+}
+footer .bottom .sns_link ul li a:hover i{
+    color: #ccc;
 }
