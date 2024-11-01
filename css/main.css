@@ -2,7 +2,6 @@
 
 main{
     width: 100%;
-    margin-top: 100px;
     margin-bottom: 120px;
 }
 main .slide{
@@ -17,9 +16,16 @@ main .slide .main_visu ul{
 }
 main .slide .main_visu ul li{
     position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 14.5%;
 }
 main .slide .main_visu ul li a{}
 main .slide .main_visu ul li a img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     object-fit: cover;
 }
 main .slide .main_visu ul li a strong{
@@ -32,38 +38,47 @@ main .slide .main_visu ul li a strong{
 }
 
 main .slide .sub_visu{
+    position: relative;
     width: 37rem;
-    height: 100%;
+    padding-top: 38%;
+    overflow: hidden;
+    border-radius: 20px
 }
-main section .main_cont{
+main .slide .sub_visu > a img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+}
+main .content .main_cont{
     width: 100%;
     margin-top: 60px;
     justify-content: space-between;
 }
-main section .main_cont h2{
-    font-size: 2.4rem;
+main .content .main_cont h2{
+    font-size: 2.8rem;
     margin-bottom: 30px;
 }
 
 
-main section .main_cont .list_box{
+main .content .main_cont .list_box{
     width: 100%;
-    height: 45rem;
 }
-main section .main_cont .list_box ul{
+main .content .main_cont .list_box ul{
     flex-wrap: wrap;
 }
-main section .main_cont .list_box ul li{
+main .content .main_cont .list_box ul li{
     width: 33.3%;
-    margin-bottom: 45px;
     padding: 0 10px;
+    margin-bottom: 45px;
     box-sizing: border-box;
 }
-main section .main_cont .list_box ul li a:hover > p{
+main .content .main_cont .list_box ul li a:hover > p{
     transform: translateY(-10px);
     filter: drop-shadow(0px 20px 40px #BDC4D3);
 }
-main section .main_cont .list_box ul li a > p{
+main .content .main_cont .list_box ul li a > p{
     width: 100%;
     height: auto;
     margin-bottom: 20px;
@@ -71,42 +86,42 @@ main section .main_cont .list_box ul li a > p{
     overflow: hidden;
     transition: 0.3s;
 }
-main section .main_cont .new ul li:first-child a > p{
+main .content .main_cont .new ul li:first-child a > p{
     border-radius: 20px 100px 100px 20px !important;
 }
-main section .main_cont .list_box ul li a > p > img{
+main .content .main_cont .list_box ul li a > p > img{
     aspect-ratio: 4 / 3;
     object-fit: cover;
 }
-main section .main_cont .list_box ul li a .tit{}
-main section .main_cont .list_box ul li a .tit b{
+main .content .main_cont .list_box ul li a .tit{}
+main .content .main_cont .list_box ul li a .tit b{
     font-size: 1.6rem;
 }
-main section .main_cont .list_box ul li a .tit b img{
+main .content .main_cont .list_box ul li a .tit b img{
     width: 25px;
     margin-right: 5px;
 }
-main section .main_cont .list_box ul li a .desc{
+main .content .main_cont .list_box ul li a .desc{
     margin-top: 15px;
 }
-main section .main_cont .list_box ul li a .desc p{
-    font-size: 2rem;
+main .content .main_cont .list_box ul li a .desc p{
     font-weight: bold;
+    font-size: 2rem;
     margin-bottom: 30px;
     word-break: keep-all;
 }
-main section .main_cont .list_box ul li a .desc span{
-    font-size: 1.4rem;
+main .content .main_cont .list_box ul li a .desc span{
     color: #ccc;
+    font-size: 1.4rem;
 }
 
-main section .main_cont .banner{
+main .content .main_cont .banner{
     width: 100%;
     background-color: #001eff;
 }
-main section .main_cont .card_list{}
-main section .main_cont .card_list ul{}
-main section .main_cont .card_list ul li{
+main .content .main_cont .card_list{}
+main .content .main_cont .card_list ul{}
+main .content .main_cont .card_list ul li{
     position: relative;
     width: 100%;
     background-color: black;
@@ -114,35 +129,35 @@ main section .main_cont .card_list ul li{
     border-radius: 20px;
     transition: 0.3s;
 }
-main section .main_cont .card_list ul li:hover{
+main .content .main_cont .card_list ul li:hover{
     transform: translateY(-10px);
     filter: drop-shadow(0px 20px 16px #BDC4D3);
 }
-main section .main_cont .card_list ul li a > img{
+main .content .main_cont .card_list ul li a > img{
     aspect-ratio: 1 / 1.1;
     object-fit: cover;
 }
-main section .main_cont .card_list ul li .txt{
+main .content .main_cont .card_list ul li .txt{
     position: absolute;
-    left: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: 70px;
-    background-color: rgba(0,0,0.2);
     padding: 20px 0 0 20px;
+    background-color: rgba(0,0,0.2);
     box-sizing: border-box;
 }
-main section .main_cont .card_list ul li .txt b{
+main .content .main_cont .card_list ul li .txt b{
     color: #fff;
     font-size: 1.8rem;
     margin-right: 5px;
 }
-main section .main_cont .card_list ul li .txt span{
-    color: #fff;
+main .content .main_cont .card_list ul li .txt span{
     padding: 5px 10px;
+    color: #fff;
+    font-weight: bold;
     background-color: #1e1e1e;
     border-radius: 30px;
-    font-weight: bold;
 }
 main .btn{
     width: 100%;
@@ -152,100 +167,15 @@ main .btn a{
     display: inline-block;
     padding: 10px 20px;
     border: 1px solid #000;
-    border-radius: 30px;
-    font-size: 1.4rem;
     font-weight: bold;
+    font-size: 1.4rem;
+    border-radius: 30px;
 }
 main .btn:hover{
     
 }
 main .btn:hover a{
-    background-color: #1e1e1e;
     color: #fff;
+    background-color: #1e1e1e;
 }
 
-@media screen and (min-width: 1023px){
-    main .slide .main_visu{
-        width: 77rem;
-    }
-    main .slide .main_visu{
-        margin-right: 30px;
-    }
-    main .slide .main_visu ul li:last-child{
-        display: none;
-    }
-    main section .main_cont .left{
-        width: 84rem;
-        height: 100%;
-        margin-right: 30px;
-    }
-    main section .main_cont .right{
-        width: 30rem;
-        height: 100%;
-    }
-    main .mobile_banner{
-        display: none;
-    }
-    main section .main_cont .banner{
-        height: 16rem;
-        margin: 100px 0 60px;
-    }
-    main section .main_cont .banner img{
-        height: 100%;
-        object-fit: contain;
-    }
-    main section .main_cont .card_list ul li{
-        margin-bottom: 30px;
-    }
-}
-@media screen and (min-width: 320px) and (max-width: 1023px){
-    main .slide .main_visu{
-        
-    }
-    main .slide .main_visu ul{
-        width: 500%;
-        display: flex;
-    }
-    main .slide .main_visu ul li{
-        width: 100%;
-    }
-    main .slide .main_visu ul li a{}
-    main .slide .main_visu ul li a img{
-        aspect-ratio: 13 / 17
-    }
-
-    main .slide .sub_visu{
-        display: none;
-    }
-    main section .main_cont .list_box ul li{
-        width: 100%;
-    }
-    main section .main_cont .list_box{
-        height: auto;
-    }
-    main section .main_cont .new ul li:first-child a > p{
-        border-radius: 20px 200px 200px 20px !important;
-    }
-    main section .main_cont .banner{
-        border-radius: 0;
-        margin: 60px 0;
-    }
-    main .pc_banner{
-        display: none;
-    }
-    main .main_cont .card_list{
-        margin-top: 65px;
-    }
-    main .main_cont .card_list ul{
-        display: flex;
-        overflow: hidden;
-        margin-bottom: 40px;
-    }
-    main section .main_cont .card_list ul li{
-        min-width: 240px;
-        margin-right: 20px;
-    }
-    main section .main_cont .card_list ul li a > img{
-        aspect-ratio: 120 / 133;
-    }
-}
