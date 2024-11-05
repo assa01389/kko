@@ -6,7 +6,7 @@ header{
     left: 0;
     width: 100%;
     height: 70px;
-    z-index: 1;
+    z-index: 10;
 }
 header.active{
     border-bottom: 1px solid #E6E5E6;
@@ -41,10 +41,8 @@ header .nav ul li a{
 header .nav ul li a:hover{
     color: #001eff;
 }
-header .nav ul li a > img{
-    width: 24px;
+header .menu .search > i,
+header .menu .hbr > i{
+    font-size: 24px;
 }
-header .search img,
-header .hbr img{
-    width: 24px;
-}
+
