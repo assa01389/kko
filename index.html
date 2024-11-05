@@ -14,8 +14,7 @@
     />
     <link
       rel="stylesheet"
-      type="text/css"
-      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/header.css" />
@@ -23,11 +22,8 @@
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="stylesheet" href="css/mediaQuery.CSS" />
     <script src="js/jquery-3.7.1.min.js"></script>
-    <script
-      type="text/javascript"
-      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
     <script src="js/script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   </head>
 
   <body>
@@ -53,6 +49,7 @@
         <div class="menu">
           <a href="#" class="search"><i class="xi-search"></i></a>
           <a href="#" class="hbr"><i class="xi-bars"></i></a>
+          <a href="#" class="close"><i class="xi-close"></i></a>
         </div>
       </div>
     </header>
@@ -272,56 +269,58 @@
             <div class="right">
               <div class="card_list">
                 <h2>폴더 📁</h2>
-                <ul id="card_slide">
-                  <li>
-                    <a href="#">
-                      <img
-                        src="images/ft_AI_healthcare.png"
-                        alt="AI_healthcare"
-                      />
-                      <div class="txt">
-                        <b>AI Healthcare</b>
-                        <span>10</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/ft_braincloud.png" alt="braincloud" />
-                      <div class="txt">
-                        <b>Brain Cloud</b>
-                        <span>4</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/ft_karlo.png" alt="karlo" />
-                      <div class="txt">
-                        <b>Karlo</b>
-                        <span>24</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/ft_krew.png" alt="krew" />
-                      <div class="txt">
-                        <b>Krew</b>
-                        <span>25</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <img src="images/ft_LLMs.png" alt="LLMs" />
-                      <div class="txt">
-                        <b>LLMs</b>
-                        <span>3</span>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
+                <div class="swiper-container">
+                  <ul id="card_slide" class="swiper-wrapper">
+                    <li class="swiper-slide">
+                      <a href="#">
+                        <img
+                          src="images/ft_AI_healthcare.png"
+                          alt="AI_healthcare"
+                        />
+                        <div class="txt">
+                          <b>AI Healthcare</b>
+                          <span>10</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="#">
+                        <img src="images/ft_braincloud.png" alt="braincloud" />
+                        <div class="txt">
+                          <b>Brain Cloud</b>
+                          <span>4</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="#">
+                        <img src="images/ft_karlo.png" alt="karlo" />
+                        <div class="txt">
+                          <b>Karlo</b>
+                          <span>24</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="#">
+                        <img src="images/ft_krew.png" alt="krew" />
+                        <div class="txt">
+                          <b>Krew</b>
+                          <span>25</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="#">
+                        <img src="images/ft_LLMs.png" alt="LLMs" />
+                        <div class="txt">
+                          <b>LLMs</b>
+                          <span>3</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
                 <p class="btn"><a href="">폴더 전체보기</a></p>
               </div>
             </div>

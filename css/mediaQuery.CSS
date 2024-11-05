@@ -1,6 +1,6 @@
 @charset "utr-8";
 
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 1024px) {
   header .hbr {
     display: none;
   }
@@ -37,6 +37,9 @@
     height: 100%;
     object-fit: contain;
   }
+  main .content .main_cont .card_list ul {
+    flex-direction: column;
+  }
   main .content .main_cont .card_list ul li {
     margin-bottom: 30px;
   }
@@ -62,9 +65,7 @@
     top: 70px;
     left: 0;
     width: 100%;
-    height: 0;
-    overflow: hidden;
-    transition: 0.3s;
+    display: none;
     z-index: 1;
   }
   header .nav ul {
@@ -76,14 +77,12 @@
   header .nav ul li {
     margin-bottom: 15px;
   }
+  header .search {
+    margin-right: 15px;
+  }
   header .hbr {
     display: inline-block;
-    margin-left: 15px;
   }
-  header .nav.active {
-    max-height: 400px;
-  }
-
   main {
     margin-top: 100px;
   }
@@ -124,21 +123,20 @@
   }
   main .main_cont .card_list {
     margin-top: 65px;
+    width: 100%;
+    overflow: hidden;
   }
   main .main_cont .card_list ul {
     display: flex;
-    overflow: hidden;
     margin-bottom: 40px;
   }
   main .content .main_cont .card_list ul li {
     min-width: 240px;
-    padding-top: 10%;
+    height: 260px;
+    padding-top: 0;
     margin-right: 20px;
   }
   main .content .main_cont .card_list ul li a > img {
-  }
-  #card_slide .slick-arrow {
-    display: none !important;
   }
 
   .pc_br {
