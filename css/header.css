@@ -1,50 +1,49 @@
 @charset "utf-8";
 
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    z-index: 1;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 10;
 }
-header.active{
-    border-bottom: 1px solid #E6E5E6;
+header.active {
+  border-bottom: 1px solid #e6e5e6;
 }
-header > .wrap{
-    height: 100%;
-    background-color: #fff;
-    align-items: center;
+header > .wrap {
+  height: 100%;
+  background-color: #fff;
+  align-items: center;
 }
-header .logo{
-    margin-right: auto;
-    align-items: center;
+header .logo {
+  margin-right: auto;
+  align-items: center;
 }
-header .logo img:first-child{
-    width: 88px;
-    margin-right: 10px;
+header .logo img:first-child {
+  width: 88px;
+  margin-right: 10px;
 }
-header .logo img:last-child{
-    width: 70px;
+header .logo img:last-child {
+  width: 70px;
 }
 
-header .nav ul{
-    align-items: center;
+header .nav ul {
+  align-items: center;
 }
-header .nav ul li{
-    margin-right: 30px;
+header .nav ul li {
+  margin-right: 30px;
 }
-header .nav ul li a{
-    font-weight: bold;
-    font-size: 1.6rem;
+header .nav ul li a {
+  font-weight: bold;
+  font-size: 1.6rem;
 }
-header .nav ul li a:hover{
-    color: #001eff;
+header .nav ul li a:hover {
+  color: #001eff;
 }
-header .nav ul li a > img{
-    width: 24px;
+header .menu i {
+  font-size: 24px;
 }
-header .search img,
-header .hbr img{
-    width: 24px;
+header .menu a:hover i {
+  color: #001eff;
 }
