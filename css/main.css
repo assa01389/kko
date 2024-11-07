@@ -9,17 +9,18 @@ main .slide {
 }
 main .slide .main_visu {
   height: 100%;
+  border-radius: 20px;
   overflow: hidden;
 }
 main .slide .main_visu ul {
-  width: 400%;
 }
 main .slide .main_visu ul li {
   position: relative;
   width: 100%;
   height: auto;
-  padding-top: 14.5%;
+  padding-top: 65.5%;
 }
+
 main .slide .main_visu ul li a {
 }
 main .slide .main_visu ul li a img {

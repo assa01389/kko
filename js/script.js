@@ -33,7 +33,7 @@ $(document).ready(function () {
   });
 });
 
-var swiper; // Swiper 인스턴스를 저장할 변수
+let swiper; // Swiper 인스턴스를 저장할 변수
 
 function initSwiper() {
   if ($(window).width() < 1024) {

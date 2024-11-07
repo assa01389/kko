@@ -14,9 +14,7 @@
   main .slide .main_visu {
     margin-right: 30px;
   }
-  main .slide .main_visu ul li:last-child {
-    display: none;
-  }
+
   main .content .main_cont .left {
     width: 84rem;
     height: 100%;
@@ -55,7 +53,8 @@
     content: "";
     background-color: rgba(0, 0, 0, 50%);
     z-index: 1;
-    display: none;
+    transition: 0.3s;
+    opacity: 0;
   }
   header .wrap {
     display: flex;
@@ -65,8 +64,10 @@
     top: 70px;
     left: 0;
     width: 100%;
-    display: none;
+    height: 0;
+    overflow: hidden;
     z-index: 1;
+    transition: 0.5s;
   }
   header .nav ul {
     display: inline-block;
@@ -134,7 +135,6 @@
     min-width: 240px;
     height: 260px;
     padding-top: 0;
-    margin-right: 20px;
   }
   main .content .main_cont .card_list ul li a > img {
   }

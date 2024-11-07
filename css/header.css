@@ -47,12 +47,3 @@ header .menu i {
 header .menu .close {
   display: none;
 }
-
-header {
-  background-color: #fff;
-  transition: all 0.3s 5s;
-}
-
-.on-active {
-  background-color: red !important;
-}
