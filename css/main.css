@@ -38,6 +38,20 @@ main .slide .main_visu ul li a strong {
   font-size: 4rem;
   text-align: right;
 }
+/* 스와이퍼 */
+.main_visu .swiper-pagination-bullet {
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.main_visu .swiper-pagination-bullet-active {
+  width: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+/* 스와이퍼 */
 
 main .slide .sub_visu {
   position: relative;

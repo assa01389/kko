@@ -1,11 +1,12 @@
 window.addEventListener("load", function () {
-  const TopMenu = document.querySelector("header");
-  //console.log(TopMenu);
+  //header
 
-  //메뉴 활성화
+  //TopMenu
+  const TopMenu = document.querySelector("header");
+
   window.addEventListener("scroll", function () {
     const scrlloPositionY = window.scrollY; //수직으로 얼마나 스크롤됐는지 픽셀 단위로 반환
-    console.log(scrlloPositionY);
+    //console.log(scrlloPositionY);
 
     if (scrlloPositionY > 0) {
       TopMenu.classList.add("active");
@@ -13,6 +14,75 @@ window.addEventListener("load", function () {
       TopMenu.classList.remove("active");
     }
   });
+  //TopMenu
+  //로고 슬라이드
+  const LOGO_DATA_URL = "/apis/logodata.json";
+
+  fetch(LOGO_DATA_URL)
+    .then(function (response) {
+      //console.log(response);
+      const result = response.json();
+      //console.log(result);
+      return result;
+    })
+    .then(function (result) {
+      console.log(result);
+
+      let logoHtml = "";
+
+      for (let i = 0; i < 9; i++) {
+        const data = `<img src="${result[i].imgUrl}" alt="${result[i].desc}"/>`;
+        logoHtml += data;
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  const logoSwiper = new Swiper(".logo_slide", {
+    loop: true,
+    autoplay: {
+      delay: 1500,
+      disableOnInteraction: false,
+    },
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+  });
+  //로고 슬라이드
+  //header
+
+  //main
+  // 메인 스와이퍼
+  let swiper = new Swiper(".main_visu", {
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".main_visu .swiper-pagination",
+      clickable: true,
+    },
+    loop: true,
+    loopedSlides: 1,
+  });
+
+  let visaulSlide = document.querySelector(".main_visu");
+  // console.log(visaulSide);
+
+  visaulSlide.addEventListener("mouseenter", function () {
+    //console.log("오버");
+    swiper.autoplay.stop();
+  });
+
+  visaulSlide.addEventListener("mouseleave", function () {
+    //console.log("아웃");
+    swiper.autoplay.start();
+  });
+  // 메인 스와이퍼
+
+  //main
 
   //모바일 메뉴 아이콘 변경
 
@@ -32,10 +102,6 @@ window.addEventListener("load", function () {
       nav.classList.remove("active");
     }
   };
-  //모바일 메뉴 아이콘 변경
-
-  //메뉴 활성화
-
   // 반응형
   window.addEventListener("resize", function () {
     const windowWidth = window.innerWidth;
@@ -48,16 +114,9 @@ window.addEventListener("load", function () {
     }
   });
   // 반응형
+  //모바일 메뉴 아이콘 변경
 
-  let swiper = new Swiper(".mySwiper", {
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    loop: true,
-    loopedSlides: 1,
-  });
-
+  //모바일 카드 스와이퍼
   let cardSwiper; // Swiper 인스턴스를 저장할 변수
 
   function initSwiper() {
@@ -89,4 +148,5 @@ window.addEventListener("load", function () {
   $(window).on("resize", function () {
     initSwiper(); // 화면 크기 변경 시 초기화/해제
   });
+  //모바일 카드 스와이퍼
 });

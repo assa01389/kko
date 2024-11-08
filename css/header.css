@@ -17,14 +17,15 @@ header > .wrap {
   align-items: center;
 }
 header .logo {
+  width: 200px;
   margin-right: auto;
   align-items: center;
 }
-header .logo img:first-child {
+header .logo img {
   width: 88px;
   margin-right: 10px;
 }
-header .logo img:last-child {
+header .logo .logo_slide ul li img {
   width: 70px;
 }
 
