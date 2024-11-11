@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "link": "#",
+    "imgpath": "thumnail_alibi.png",
+    "category": "LLMs",
+    "icon": "ic_llms.png",
+    "txtcolor": "#F96D6D",
+    "title": "Transformer 기반 AI 가속 프레임워크 ALiBi FlashAttention 공개",
+    "day": "2024.03.20"
+  },
+  {
+    "id": 2,
+    "link": "#",
+    "imgpath": "thumnail_hnb.png",
+    "category": "LLMs",
+    "icon": "ic_llms.png",
+    "txtcolor": "#F96D6D",
+    "title": "멀티모달 언어모델 오픈소스 프로젝트‘허니비’ 공개",
+    "day": "2024.03.20"
+  },
+  {
+    "id": 3,
+    "link": "#",
+    "imgpath": "thumnail_list-1.png",
+    "category": "Krew",
+    "icon": "ic_krew.png",
+    "txtcolor": "#E700A7",
+    "title": "Krew Interview ④ - '카카오브레인은 AI 신약연구 및 개발이라는 흐름에 제법 빨리 뛰어든 플레이어예요.'",
+    "day": "2024.03.20"
+  },
+  {
+    "id": 4,
+    "link": "#",
+    "imgpath": "thumnail_fate.png",
+    "category": "Krew",
+    "icon": "ic_krew.png",
+    "txtcolor": "#E700A7",
+    "title": "Krew Interview ② - '카카오브레인의 도전은 말 그대로 진짜 ‘도전'이에요'",
+    "day": "2024.03.20"
+  },
+  {
+    "id": 5,
+    "link": "#",
+    "imgpath": "thumnail_pf2.png",
+    "category": "Krew",
+    "icon": "ic_krew.png",
+    "txtcolor": "#E700A7",
+    "title": "지금부터 경로를 탐색 하시겠습니까? - 카카오브레인 PathFinder 2기의 언어모델 활용기",
+    "day": "2023.11.07"
+  },
+  {
+    "id": 6,
+    "link": "#",
+    "imgpath": "스크린샷-2023-10-30-오전-10.58.44.png",
+    "category": "AI Helathcare",
+    "icon": "ic_aihealthcare.png",
+    "txtcolor": "#E700A7",
+    "title": "카카오브레인 KAIST 기업/채용 설명회- “Drug Discovery meets AI”",
+    "day": "2023.10.20"
+  }
+]

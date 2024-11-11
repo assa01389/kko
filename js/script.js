@@ -66,46 +66,48 @@ $(window).on("resize", function () {
 });
 
 window.addEventListener("load", function () {
-  // api 주소 :  json 주소가 어디니?
-  const LOGO_DATA_URL = "/apis/logodata.json";
-  // API 를 통한 데이터 불러오기
-  // ---- request: 리퀘스트
-  // API 를 통해 불러들여진 결과물
-  // ---- response : 리스판스
+  const pickDataUrl = "apis/pick.json";
 
-  fetch(LOGO_DATA_URL)
+  fetch(pickDataUrl)
     .then(function (response) {
-      const result = response.json();
-      return result;
+      const resuit = response.json();
+      return resuit;
     })
-    .then(function (result) {
-      // 1. json 뜯기
-      console.log(result);
-      // 2. 반복해서 html 태그 를 생성
-      let logoHtml = "";
-      for (let i = 0; i < 9; i++) {
-        const data = `<div class="swiper-slide"><img src="${result[i].imgUrl}" alt="${result[i].desc}"/></div>`;
-        logoHtml += data;
+    .then(function (resuit) {
+      let htmlPick = "";
+      let htmlTagList = "";
+
+      for (let i = 0; i < resuit.length; i++) {
+        const Matter = result[i];
+        htmlTagList += `
+          <li>
+            <a href="${Matter.link}">
+              <p><img src="images/${Matter.imgpath}" alt="${Matter.category}" /></p>
+              <div class="tit">
+                <b><img src="images/${Matter.icon}" alt="${Matter.category}" /></b>
+                <b>${Matter.category}</b>
+              </div>
+              <div class="desc">
+                <p>${Matter.title}</p>
+                <span>${Matter.day}</span>
+              </div>
+            </a>
+          </li>
+        `;
+
+        let Tag = "";
+
+        if ((i + 1) % 3 == 0) {
+          Tag = `<div class="list">${htmlTagList}</div>`;
+
+          htmlTagList = "";
+        } else if (i == result.length - 1) {
+          Tag = `<div class="list">${htmlTagList}</div>`;
+          htmlTagList = "";
+        }
+
+        htmlPick += Tag;
       }
-
-      // 3. 생성된 html 을 원하는 곳에 배치
-      // 4. swiper 생성 및 실행
     })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-  //   const logoData;
-
-  const headerLogo = new Swiper(".header-logo-motion", {
-    loop: true,
-    autoplay: {
-      delay: 1500,
-      disableOnInteraction: false,
-    },
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true,
-    },
-  });
+    .catch(function () {});
 });

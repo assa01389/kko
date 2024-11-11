@@ -24,6 +24,7 @@
     width: 30rem;
     height: 100%;
   }
+  main .content .main_cont .pick ul{display: flex;}
   main .mobile_banner {
     display: none;
   }
@@ -52,10 +53,10 @@
     height: 100%;
     content: "";
     visibility: hidden;
+    z-index: 9;
     transition: 0.3s;
   }
   .menu_bg.active {
-    z-index: 9;
     background-color: rgba(0, 0, 0, 50%);
     visibility: visible;
   }
@@ -115,6 +116,7 @@
   main .content .main_cont .list_box ul li {
     width: 100%;
   }
+  
   main .content .main_cont .list_box {
     height: auto;
   }

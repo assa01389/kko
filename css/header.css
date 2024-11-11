@@ -19,6 +19,7 @@ header > .wrap {
 header .logo {
   width: 200px;
   margin-right: auto;
+  display: flex;
   align-items: center;
 }
 header .logo img {

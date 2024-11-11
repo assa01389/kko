@@ -26,61 +26,266 @@ window.addEventListener("load", function () {
       return result;
     })
     .then(function (result) {
-      console.log(result);
+      // console.log("불러온데이터 ", result);
 
       let logoHtml = "";
 
-      for (let i = 0; i < 9; i++) {
-        const data = `<img src="${result[i].imgUrl}" alt="${result[i].desc}"/>`;
+      for (let i = 0; i < 8; i++) {
+        const data = `<li class="swiper-slide"><img src="images/${result[i].imgUrl}" alt="${result[i].desc}"/></li>`;
         logoHtml += data;
       }
+      // console.log(logoHtml);
+
+      const logoIcon = document.querySelector(".logo_slide .swiper-wrapper");
+      //html에 글자를 넣는
+      logoIcon.innerHTML = logoHtml;
+
+      const logoslide = new Swiper(".logo_slide", {
+        loop: true,
+        autoplay: {
+          delay: 500,
+          disableOnInteraction: false,
+        },
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+      });
+      logoslide.autoplay.stop();
+
+      const swiperAuto = document.querySelector(".logo_slide .swiper-wrapper");
+
+      // 마우스 오버 시 자동 재생 시작
+      swiperAuto.addEventListener("mouseenter", () => {
+        logoslide.autoplay.start();
+      });
+
+      // 마우스가 떠날 시 자동 재생 멈춤
+      swiperAuto.addEventListener("mouseleave", () => {
+        logoslide.autoplay.stop();
+        logoslide.slideTo(0);
+      });
     })
     .catch(function (error) {
       console.log(error);
     });
 
-  const logoSwiper = new Swiper(".logo_slide", {
-    loop: true,
-    autoplay: {
-      delay: 1500,
-      disableOnInteraction: false,
-    },
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true,
-    },
-  });
   //로고 슬라이드
   //header
 
   //main
   // 메인 스와이퍼
-  let swiper = new Swiper(".main_visu", {
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".main_visu .swiper-pagination",
-      clickable: true,
-    },
-    loop: true,
-    loopedSlides: 1,
-  });
 
-  let visaulSlide = document.querySelector(".main_visu");
-  // console.log(visaulSide);
+  const slideData = "/apis/slide.json";
 
-  visaulSlide.addEventListener("mouseenter", function () {
-    //console.log("오버");
-    swiper.autoplay.stop();
-  });
+  fetch(slideData)
+    .then(function (response) {
+      const result = response.json();
+      return result;
+    })
+    .then(function (result) {
+      let slideHtml = "";
 
-  visaulSlide.addEventListener("mouseleave", function () {
-    //console.log("아웃");
-    swiper.autoplay.start();
-  });
+      for (let i = 0; i < 4; i++) {
+        const slide = `
+          <li class="swiper-slide">
+            <a href="${result[i].url}">
+              <img src="images/${result[i].pic}" alt="${result[i].pic}" />
+              <strong>${result[i].title}</strong>
+            </a>
+          </li>
+        `;
+        slideHtml += slide;
+      }
+
+      const slideImg = document.querySelector(".main_visu .swiper-wrapper");
+      slideImg.innerHTML = slideHtml;
+
+      let swiper = new Swiper(".main_visu", {
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".main_visu .swiper-pagination",
+          clickable: true,
+        },
+        loop: true,
+        loopedSlides: 1,
+      });
+
+      let visaulSlide = document.querySelector(".main_visu");
+      // console.log(visaulSide);
+
+      visaulSlide.addEventListener("mouseenter", function () {
+        //console.log("오버");
+        swiper.autoplay.stop();
+      });
+
+      visaulSlide.addEventListener("mouseleave", function () {
+        //console.log("아웃");
+        swiper.autoplay.start();
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
   // 메인 스와이퍼
+
+  //box_list
+  const newData = "apis/news.json";
+
+  fetch(newData)
+    .then(function (response) {
+      // console.log("뉴스:", response);
+      const result = response.json();
+      return result;
+    })
+    .then(function (result) {
+      console.log("뉴스결과 : ", result);
+      let newsItem = "";
+      for (let i = 0; i < 3; i++) {
+        const tag = `
+        <li>
+          <a href="${result[i].link}">
+            <p><img src="images/${result[i].imgpath}" alt="${result[i].category}" /></p>
+            <div class="tit">
+              <b><img src="images/${result[i].icon}" alt="${result[i].category}"/></b>
+              <b>${result[i].category}</b>
+            </div>
+            <div class="desc">
+              <p>${result[i].title}</p>
+              <span>${result[i].day}</span>
+            </div>
+          </a>
+        </li>
+        `;
+
+        newsItem += tag;
+      }
+
+      const newsHtmlTag = document.querySelector(".new ul");
+      newsHtmlTag.innerHTML = newsItem;
+    })
+    .catch(function () {});
+  //box_list
+
+  //pick_list
+  const pickDataUrl = "apis/pick.json";
+
+  fetch(pickDataUrl)
+    .then(function (response) {
+      const result = response.json();
+      return result;
+    })
+    .then(function (result) {
+      let htmlPick = "";
+      let htmlTagList = "";
+
+      for (let i = 0; i < result.length; i++) {
+        const matter = result[i];
+        htmlTagList += `
+          <li>
+            <a href="${matter.link}">
+              <p><img src="images/${matter.imgpath}" alt="${matter.category}" /></p>
+              <div class="tit">
+                <b><img src="images/${matter.icon}" alt="${matter.category}" /></b>
+                <b>${matter.category}</b>
+              </div>
+              <div class="desc">
+                <p>${matter.title}</p>
+                <span>${matter.day}</span>
+              </div>
+            </a>
+          </li>
+        `;
+
+        let Tag = "";
+
+        if ((i + 1) % 3 == 0) {
+          Tag = `<div class="pick"><ul>${htmlTagList}</ul></div>`;
+
+          htmlTagList = "";
+        } else if (i == result.length - 1) {
+          Tag = `<div class="pick"><ul>${htmlTagList}</ul></div>`;
+          htmlTagList = "";
+        }
+
+        htmlPick += Tag;
+      }
+
+      const pickHtmlTag = document.querySelector(".pick ul");
+      pickHtmlTag.innerHTML = htmlPick;
+    })
+    .catch(function () {});
+  //pick_list
+
+  //card_list
+  const cardData = "apis/cards.json";
+
+  fetch(cardData)
+    .then(function (response) {
+      // console.log("카드:", response);
+      const result = response.json();
+      return result;
+    })
+    .then(function (result) {
+      let cardItem = "";
+      for (let i = 0; i < 5; i++) {
+        const list = `
+        <li class="swiper-slide">
+          <a href="${result[i].link}">
+            <img src="images/${result[i].imgpath}" alt="${result[i].cardname}" />
+            <div class="txt">
+              <b>${result[i].cardname}</b>
+              <span>${result[i].cardno}</span>
+            </div>
+          </a>
+        </li>
+        `;
+
+        cardItem += list;
+      }
+
+      const cardsHtmlTag = document.querySelector("#card_slide");
+      cardsHtmlTag.innerHTML = cardItem;
+
+      let cardSwiper; // Swiper 인스턴스를 저장할 변수
+
+      function initSwiper() {
+        if ($(window).width() < 1024) {
+          if (!cardSwiper) {
+            // 초기화된 Swiper가 없을 때만 생성
+            cardSwiper = new Swiper(".swiper-container", {
+              slidesPerView: 3,
+              loop: true,
+              loopAdditionalSlides: 1,
+              freeMode: true,
+              spaceBetween: 20,
+            });
+          }
+        } else {
+          if (cardSwiper) {
+            // PC에서 기존에 초기화된 Swiper가 있으면 해제
+            cardSwiper.destroy(); // Swiper 해제
+            cardSwiper = undefined;
+            $(".swiper-wrapper").removeAttr("style"); // Swiper가 생성한 인라인 스타일 제거
+            $(".swiper-slide").removeAttr("style");
+          }
+        }
+      }
+      $(document).ready(function () {
+        initSwiper(); // 페이지 로드 시 초기화
+      });
+
+      $(window).on("resize", function () {
+        initSwiper(); // 화면 크기 변경 시 초기화/해제
+      });
+      //모바일 카드 스와이퍼
+    })
+    .catch(function (result) {});
+  //card_list
 
   //main
 
@@ -116,37 +321,5 @@ window.addEventListener("load", function () {
   // 반응형
   //모바일 메뉴 아이콘 변경
 
-  //모바일 카드 스와이퍼
-  let cardSwiper; // Swiper 인스턴스를 저장할 변수
-
-  function initSwiper() {
-    if ($(window).width() < 1024) {
-      if (!cardSwiper) {
-        // 초기화된 Swiper가 없을 때만 생성
-        cardSwiper = new Swiper(".swiper-container", {
-          slidesPerView: 3,
-          loop: true,
-          loopAdditionalSlides: 1,
-          freeMode: true,
-          spaceBetween: 20,
-        });
-      }
-    } else {
-      if (cardSwiper) {
-        // PC에서 기존에 초기화된 Swiper가 있으면 해제
-        cardSwiper.destroy(); // Swiper 해제
-        cardSwiper = undefined;
-        $(".swiper-wrapper").removeAttr("style"); // Swiper가 생성한 인라인 스타일 제거
-        $(".swiper-slide").removeAttr("style");
-      }
-    }
-  }
-  $(document).ready(function () {
-    initSwiper(); // 페이지 로드 시 초기화
-  });
-
-  $(window).on("resize", function () {
-    initSwiper(); // 화면 크기 변경 시 초기화/해제
-  });
   //모바일 카드 스와이퍼
 });
