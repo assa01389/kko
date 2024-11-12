@@ -3,30 +3,40 @@
     "id": 1,
     "pic": "slide_img_01.jpg",
     "url": "#",
-    "title": "AI 헬스케어의 <br/> 마일스톤을 찍다"
+    "title": "AI 헬스케어의 <br/> 마일스톤을 찍다",
+    "mobile": true,
+    "desktop": true
   },
   {
     "id": 2,
     "pic": "slide_img_02.png",
     "url": "#",
-    "title": "카카오브레인의 <br/> 연구문화"
+    "title": "카카오브레인의 <br/> 연구문화",
+    "mobile": true,
+    "desktop": true
   },
   {
     "id": 3,
     "pic": "slide_img_03.png",
     "url": "#",
-    "title": "PathFinder 2기의 <br/> 언어모델 활용기"
+    "title": "PathFinder 2기의 <br/> 언어모델 활용기",
+    "mobile": true,
+    "desktop": true
   },
   {
     "id": 4,
     "pic": "slide_img_04.png",
     "url": "#",
-    "title": "칼로리의 꿈 <br/> 시리즈 ③"
+    "title": "칼로리의 꿈 <br/> 시리즈 ③",
+    "mobile": true,
+    "desktop": true
   },
   {
     "id": 5,
     "pic": "visual_img.png",
     "url": "#",
-    "title": ""
+    "title": "",
+    "mobile": true,
+    "desktop": false
   }
 ]

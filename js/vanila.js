@@ -86,9 +86,9 @@ window.addEventListener("load", function () {
     .then(function (result) {
       let slideHtml = "";
 
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < result.length; i++) {
         const slide = `
-          <li class="swiper-slide">
+          <li class="swiper-slide data_desktop="${result[i].desktop}" data_mobile="${result[i].mobile}">
             <a href="${result[i].url}">
               <img src="images/${result[i].pic}" alt="${result[i].pic}" />
               <strong>${result[i].title}</strong>
@@ -100,6 +100,47 @@ window.addEventListener("load", function () {
 
       const slideImg = document.querySelector(".main_visu .swiper-wrapper");
       slideImg.innerHTML = slideHtml;
+
+      const slideList = document.querySelectorAll(
+        ".main_visu .swiper-wrapper .swiper-slide"
+      );
+
+      slideList.forEach(function (result) {
+        // console.log(result);
+      }); //추가예정
+
+      let windowFull = "desktop";
+      // console.log(windowFull);
+
+      const windowWidth = window.innerWidth;
+
+      if (windowWidth > 1024) {
+        if (windowFull != "desktop") {
+          windowFull = "desktop";
+          // console.log("pc");
+        }
+      } else {
+        if (windowFull != "mobile") {
+          windowFull = "mobile";
+          // console.log("mobile");
+        }
+      }
+
+      window.addEventListener("resize", function () {
+        const windowWidth = window.innerWidth;
+
+        if (windowWidth > 1024) {
+          if (windowFull != "desktop") {
+            windowFull = "desktop";
+            console.log("pc");
+          }
+        } else {
+          if (windowFull != "mobile") {
+            windowFull = "mobile";
+            console.log("mobile");
+          }
+        }
+      });
 
       let swiper = new Swiper(".main_visu", {
         autoplay: {

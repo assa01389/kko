@@ -65,49 +65,42 @@ $(window).on("resize", function () {
   initSwiper(); // 화면 크기 변경 시 초기화/해제
 });
 
-window.addEventListener("load", function () {
-  const pickDataUrl = "apis/pick.json";
+const LOGO_DATA_URL = "/apis/logodata.json";
 
-  fetch(pickDataUrl)
-    .then(function (response) {
-      const resuit = response.json();
-      return resuit;
-    })
-    .then(function (resuit) {
-      let htmlPick = "";
-      let htmlTagList = "";
+fetch(LOGO_DATA_URL)
+  .then(function (response) {
+    //console.log(response);
+    const result = response.json();
+    //console.log(result);
+    return result;
+  })
+  .then(function (result) {
+    // console.log("불러온데이터 ", result);
 
-      for (let i = 0; i < resuit.length; i++) {
-        const Matter = result[i];
-        htmlTagList += `
-          <li>
-            <a href="${Matter.link}">
-              <p><img src="images/${Matter.imgpath}" alt="${Matter.category}" /></p>
-              <div class="tit">
-                <b><img src="images/${Matter.icon}" alt="${Matter.category}" /></b>
-                <b>${Matter.category}</b>
-              </div>
-              <div class="desc">
-                <p>${Matter.title}</p>
-                <span>${Matter.day}</span>
-              </div>
-            </a>
-          </li>
-        `;
+    let logoHtml = "";
 
-        let Tag = "";
+    for (let i = 0; i < 8; i++) {
+      const data = `<li class="swiper-slide"><img src="images/${result[i].imgUrl}" alt="${result[i].desc}"/></li>`;
+      logoHtml += data;
+    }
+    // console.log(logoHtml);
 
-        if ((i + 1) % 3 == 0) {
-          Tag = `<div class="list">${htmlTagList}</div>`;
+    const logoIcon = document.querySelector(".logo_slide .swiper-wrapper");
+    //html에 글자를 넣는
+    logoIcon.innerHTML = logoHtml;
 
-          htmlTagList = "";
-        } else if (i == result.length - 1) {
-          Tag = `<div class="list">${htmlTagList}</div>`;
-          htmlTagList = "";
-        }
-
-        htmlPick += Tag;
-      }
-    })
-    .catch(function () {});
-});
+    const logoslide = new Swiper(".logo_slide", {
+      loop: true,
+      autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+      },
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+    });
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
