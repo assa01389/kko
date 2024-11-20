@@ -1,10 +1,55 @@
-window.addEventListener("load", function () {
-  // api 주소 :  json 주소가 어디니?
-  const LOGO_DATA_URL = "/apis/logodata.json";
-  // API 를 통한 데이터 불러오기
-  // ---- request: 리퀘스트
-  // API 를 통해 불러들여진 결과물
-  // ---- response : 리스판스
+$(document).ready(function () {
+  var LOGO_DATA_URL = "/apis/logodata.json";
+
+  $.ajax({
+    url: LOGO_DATA_URL,
+    method: "GET",
+    datatype: "json",
+    success: function (result) {
+      var logoHtml = "";
+
+      for (var i = 0; i < result.length; i++) {
+        var data = "";
+        data += "<div class='swiper-slide'>";
+        data += "<img src='";
+        data += "/images/etc/";
+        data += result[i].imgUrl;
+        data += "' alt='";
+        data += result[i].desc;
+        data += "' />";
+        data += "</div>";
+        logoHtml += data;
+      }
+
+      var headerLogoTag = $(".header-logo-motion .swiper-wrapper");
+
+      headerLogoTag.html(logoHtml);
+      var headerLogo = new Swiper(".header-logo-motion", {
+        loop: true,
+        autoplay: {
+          delay: 1500,
+          disableOnInteraction: false,
+        },
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+      });
+
+      // 추가 1:  먼저 멈춘다.
+      headerLogo.autoplay.stop();
+      // 추가 2: 마우스 오버 되면 다시 플레이
+      headerLogoTag.on("mouseenter", function () {
+        headerLogo.autoplay.start();
+      });
+      // 추가 3: 마우스 아웃 되면 멈춤 및 첫 슬라이드로 이동
+      headerLogoTag.on("mouseleave", function () {
+        headerLogo.autoplay.stop();
+        headerLogo.slideToLoop(0); // 무조건 첫 슬라이드로 가라.
+      });
+    },
+    error: function (error) {},
+  });
 
   fetch(LOGO_DATA_URL)
     .then(function (response) {
