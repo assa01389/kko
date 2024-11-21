@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
         <div class="swiper-slide"> 
          <a href="${result[i].link}" class="card-wrap">
                 <div class="card-img">
-                  <img src="./images/${result[i].imgpath}" alt="${result[i].cardname}" />
+                  <img src="/images/${result[i].imgpath}" alt="${result[i].cardname}" />
                 </div>
 
                 <div class="card-info">
@@ -36,7 +36,9 @@ window.addEventListener("load", function () {
       }
       //   console.log(htmlNews);
       // html 출력하기
-      const cardTag = document.querySelector(".mb-card-slide-wrap .swiper-wrapper");
+      const cardTag = document.querySelector(
+        ".mb-card-slide-wrap .swiper-wrapper",
+      );
       // console.log(cardTag);
       cardTag.innerHTML = htmlCard;
 

@@ -18,7 +18,7 @@ window.addEventListener("load", function () {
         const tag = `
          <a href="${result[i].link}" class="card-wrap">
                 <div class="card-img">
-                  <img src="./images/${result[i].imgpath}" alt="${result[i].cardname}" />
+                  <img src="/images/${result[i].imgpath}" alt="${result[i].cardname}" />
                 </div>
 
                 <div class="card-info">

@@ -24,10 +24,10 @@ window.addEventListener("load", function () {
         html_Atag_list += `
         <a href="${obj.link}" class="thum">
             <div class="thum-img">
-                <img src="./images/${obj.imgpath}" alt="${obj.category}" />
+                <img src="/images/${obj.imgpath}" alt="${obj.category}" />
             </div>
             <div class="thum-cate">
-                <img src="./images/icon/${obj.icon}" alt="${obj.category}" />
+                <img src="/images/icon/${obj.icon}" alt="${obj.category}" />
                 <span>${obj.category}</span>
             </div>
             <h5 class="thum-title">${obj.title}</h5>
